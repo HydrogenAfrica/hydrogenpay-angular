@@ -28,9 +28,9 @@ export class HydrogenService {
       script.addEventListener('load', onLoadFunc);
       script.setAttribute(
         'src',
-        mode === 'TEST'
-          ? 'https://hydrogenshared.blob.core.windows.net/paymentgateway/paymentGatewayIntegration_v1.js'
-          : 'https://hydrogenshared.blob.core.windows.net/paymentgateway/paymentGatewayIntegration_v1PROD.js'
+        mode === 'LIVE'
+          ? 'https://hydrogenshared.blob.core.windows.net/paymentgateway/paymentGatewayIntegration_v1PROD.js'
+          : 'https://hydrogenshared.blob.core.windows.net/paymentgateway/paymentGatewayIntegration_v1.js'
       );
     });
   }
