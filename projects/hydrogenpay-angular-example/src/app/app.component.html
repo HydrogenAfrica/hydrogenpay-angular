@@ -1,0 +1,25 @@
+<style></style>
+
+<main class="main">
+  <div class="content">
+    <button
+      class="btn-go-checkout"
+      hydrogen-ng
+      (onSuccess)="PaymentComplete($event)"
+      (close)="PaymentClose($event)"
+      [options]="options"
+    >
+      <i class="fas fa-lock"></i>
+      <span>Checkout</span>
+    </button>
+
+    <hydrogen-ng
+      class="btn-go-checkout"
+      (onSuccess)="PaymentComplete($event)"
+      (validationError)="PaymentClose($event)"
+      [options]="options"
+    >
+      Checkout
+    </hydrogen-ng>
+  </div>
+</main>
