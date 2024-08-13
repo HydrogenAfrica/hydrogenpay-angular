@@ -63,8 +63,7 @@ export interface PrivateHydrogenPayOptions extends HydrogenPayOptions {
 export interface PrivateHydrogenPayOptionsWithEmitters
   extends HydrogenPayOptions {
   /**
-   * A function to be called on successful card charge. User’s can always be redirected to a successful or
-   * failed page supplied by the merchant here based on response
+   * A function to be called on successful transaction
    */
   onSuccess: EventEmitter<any>;
   /**
