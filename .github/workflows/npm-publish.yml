@@ -19,4 +19,4 @@ jobs:
       - name: Publish package on NPM 📦
         run: npm run build && npm publish /home/runner/work/hydrogenpay-angular/hydrogenpay-angular/dist/hydrogenpay-angular --ignore-scripts
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
