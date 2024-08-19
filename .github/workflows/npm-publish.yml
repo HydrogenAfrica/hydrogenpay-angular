@@ -14,8 +14,12 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           registry-url: 'https://registry.npmjs.org'
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli > /dev/null 
+      - name: Install Dependencies 
+        run: npm install 
       - name: Publish package on NPM 📦
         run: npm run build && npm publish /home/runner/work/hydrogenpay-angular/hydrogenpay-angular/dist/hydrogenpay-angular --ignore-scripts
         env:
