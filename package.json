@@ -1,6 +1,6 @@
 {
   "name": "hydrogenpay-angular",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,7 +9,6 @@
     "test": "ng test",
     "build:hydrogen": "sudo ng build hydrogenpay-angular --watch"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^17.3.0",
     "@angular/common": "^17.3.0",
@@ -36,5 +35,15 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^17.3.0",
     "typescript": "~5.4.2"
-  }
+  },
+  "author": "hydrogenpay <support@hydrogenpay.com> (https://github.com/HydrogenAfrica)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HydrogenAfrica/hydrogenpay-angular.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HydrogenAfrica/hydrogenpay-angular/issues"
+  },
+  "homepage": "https://github.com/HydrogenAfrica/hydrogenpay-angular#readme"
 }
