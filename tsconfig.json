@@ -3,20 +3,24 @@
   "compileOnSave": false,
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
-    "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
+    "baseUrl": "./",
     "sourceMap": true,
     "declaration": false,
+    "downlevelIteration": true,
     "experimentalDecorators": true,
+    "module": "esnext",
     "moduleResolution": "node",
     "importHelpers": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "paths": {
+      "hydrogenpay-angular": [
+        "./dist/hydrogenpay-angular"
+      ]
+    },
+    "esModuleInterop": true,
     "target": "ES2022",
-    "module": "ES2022",
     "useDefineForClassFields": false,
     "lib": [
       "ES2022",
@@ -24,9 +28,9 @@
     ]
   },
   "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
+    "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "disableTypeScriptVersionCheck": true,
+    "skipLibCheck": true
   }
 }
