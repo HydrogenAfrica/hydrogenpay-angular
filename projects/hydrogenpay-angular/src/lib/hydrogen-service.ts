@@ -13,7 +13,7 @@ declare var window: MyWindow;
 export class HydrogenService {
   constructor() {}
 
-  loadScript(mode): Promise<void> {
+  loadScript(): Promise<void> {
     return new Promise((resolve) => {
       if (window.handlePgData) {
         resolve();
@@ -28,21 +28,18 @@ export class HydrogenService {
       script.addEventListener('load', onLoadFunc);
       script.setAttribute(
         'src',
-        mode === 'LIVE'
-          ? 'https://hydrogenshared.blob.core.windows.net/paymentgateway/paymentGatewayIntegration_v1PROD.js'
-          : 'https://hydrogenshared.blob.core.windows.net/paymentgateway/paymentGatewayIntegration_v1.js'
+        'https://hydrogenshared.blob.core.windows.net/paymentgateway/paymentGatewayIntegration_v1PROD.js'
       );
     });
   }
   getOptions(obj: HydrogenPayOptions): HydrogenPayOptions {
     return {
       amount: obj.amount,
-      token: obj.token,
+      apiKey: obj.apiKey,
       currency: obj.currency || 'NGN',
       description: obj.description,
       email: obj.email || '',
       customerName: obj.customerName || '',
-      mode: obj.mode || 'TEST',
       isApi: false,
       isRecurring: obj.isRecurring,
       frequency: obj.frequency,
@@ -51,14 +48,11 @@ export class HydrogenService {
     };
   }
   checkInput(obj: Partial<HydrogenPayOptions>): string {
-    if (!obj.token) {
-      return 'Hydrogen Payment: Please insert your Token';
+    if (!obj.apiKey) {
+      return 'Hydrogen Payment: Please insert your LIVE or TEST Api Key';
     }
     if (!obj.amount) {
       return 'Hydrogen Payment: Transaction amount is required';
-    }
-    if (!obj.mode) {
-      return 'Hydrogen Payment: Payment Mode amount is required (LIVE | TEST)';
     }
     return '';
   }
