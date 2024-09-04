@@ -18,7 +18,6 @@ export class AppComponent {
     isRecurring: false,
     frequency: 1,
     endDate: '2025-11-01',
-    // mode: "TEST"
   };
 
   PaymentComplete(res: any) {
