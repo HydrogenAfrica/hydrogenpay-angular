@@ -6,9 +6,9 @@ export interface HydrogenPayOptions {
    */
   amount: string | number;
   /**
-   * Merchant Token
+   * Merchant api Key
    */
-  token: string;
+  apiKey: string;
   /**
    * Transaction currency
    */
@@ -44,7 +44,7 @@ export interface HydrogenPayOptions {
   /**
    * Payment Mode
    */
-  mode: 'TEST' | 'LIVE';
+  mode?: 'TEST' | 'LIVE';
   isApi?: boolean;
   meta?: string;
 }

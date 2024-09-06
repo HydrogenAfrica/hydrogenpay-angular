@@ -41,7 +41,7 @@ https://docs.hydrogenpay.com
 
 ## Implementation
 
-You should already have your token, If not, go to [https://dashboard.hydrogenpay.com](https://dashboard.hydrogenpay.com).
+You should already have your apiKey, If not, go to [https://dashboard.hydrogenpay.com](https://dashboard.hydrogenpay.com).
 
 ## Injecting the library
 
@@ -82,7 +82,7 @@ export class AppComponent {
     email: "test@emaildomain.com", // REQUIRED
     customerName: "test test", // REQUIRED
     amount: 500, // REQUIRED
-    token: "E2E411B102072296C73F76339497FB8529FF552F0D6817E0F3B46A243961CA21", // REQUIRED
+    apiKey: "E2E411B102072296C73F76339497FB8529FF552F0D6817E0F3B46A243961CA21", // REQUIRED
     mode: "TEST", // REQUIRED
     isRecurring: false, // OPTIONAL
     frequency: 1, // OPTIONAL
@@ -128,7 +128,7 @@ export class AppComponent {
 | description  | `String`   | Optional | The transaction description                                                 |
 | customerName | `String`   | Required | The fullname of the user to be charged                                      |
 | amount       | `Number`   | Required | The transaction amount                                                      |
-| token        | `String`   | Required | Your token or see above step to get yours                                   |
+| apiKey       | `String`   | Required | Your apiKey or see above step to get yours                                   |
 | onSuccess    | `Function` | Required | Callback when transaction is successful                                     |
 | onClose      | `Function` | Required | Callback when transaction is closed of cancel                               |
 | isRecurring  | `boolean`  | Optional | Recurring Payment                                                           |

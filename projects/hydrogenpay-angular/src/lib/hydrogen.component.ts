@@ -13,7 +13,7 @@ import { HydrogenService } from './hydrogen-service';
 
 interface MyWindow extends Window {
   handlePgData: { (options: any, onSuccess: any, onClose: any) };
-  handlePaymentStatus: { (transactionRef: any, tokens: any) };
+  handlePaymentStatus: { (transactionRef: any, apiKey: any) };
   closeModal: { (transactionRef: any) };
 }
 
@@ -57,13 +57,13 @@ export default class HydrogenComponent {
     return this.hydrogenService.checkInput(obj);
   }
 
-  checkStatus(token: string, transactionRef: string, callback) {
+  checkStatus(apiKey: string, transactionRef: string, callback) {
     let checkStatus: any;
     if (transactionRef && transactionRef !== 'Error in initiating payment') {
       checkStatus = setInterval(async function () {
         const checkPaymentStatus = await window.handlePaymentStatus(
           transactionRef,
-          token
+          apiKey
         );
 
         if (checkPaymentStatus?.status === 'Paid') {
@@ -89,17 +89,17 @@ export default class HydrogenComponent {
       this.validationError.emit(errorText);
       return errorText;
     }
-    await this.hydrogenService.loadScript(this.options.mode);
+    await this.hydrogenService.loadScript();
     const getRef = window.handlePgData(
       { ...this.options, isAPI: false },
-      this._options.token,
+      this._options.apiKey,
       this.handleCancel
     );
 
-    let token = this._options.token;
+    let apiKey = this._options.apiKey;
 
     //get payment reference
     const transactionRef = await getRef;
-    this.checkStatus(token, transactionRef, this.handleCallback);
+    this.checkStatus(apiKey, transactionRef, this.handleCallback);
   }
 }

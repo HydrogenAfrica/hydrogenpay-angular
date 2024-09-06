@@ -14,8 +14,7 @@ export class AppComponent {
     email: 'test@emaildomain.com',
     customerName: 'test test',
     amount: 500,
-    token: 'E2E411B102072296C73F76339497FB8529FF552F0D6817E0F3B46A243961CA21', // replace this with your own public key from your Merchant Dashboard
-    mode: 'TEST',
+    apiKey: 'PK_TEST_cca53e0b3bc7847aff94502b8a585f84', // replace this with your apikey
     isRecurring: false,
     frequency: 1,
     endDate: '2025-11-01',
