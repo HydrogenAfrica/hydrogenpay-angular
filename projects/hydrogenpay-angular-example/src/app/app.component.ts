@@ -11,14 +11,22 @@ export class AppComponent {
   options = {
     currency: 'NGN',
     description: 'TEST',
-    email: 'test@emaildomain.com',
+    email: 'inspiron.amos@gmail.com',
     customerName: 'test test',
-    amount: 500,
-    apiKey: 'PK_TEST_cca53e0b3bc7847aff94502b8a585f84', // replace this with your apikey
+    amount: 5,
+    apiKey: "PK_LIVE_0b2cabb4fb3a020647e50b7f3c437767", //"PK_TEST_cca53e0b3bc7847aff94502b8a585f84",//'SK_LIVE_ad9614acf356f9c6d6b0dda5895aee33', //PK_TEST_cca53e0b3bc7847aff94502b8a585f84', // replace this with your apikey
     isRecurring: false,
-    frequency: 1,
-    endDate: '2025-11-01',
+    frequency: 5,
+    endDate: '2026-05-09',
+    transactionRef: this.generateTransactionRef(),
+    metaData:[
+				// { fieldName: "uniqueId", fieldDefaultValue: "DevStore14", fieldKey: "uniqueId", fieldType: 1 },
+			]
   };
+
+  generateTransactionRef(): string {
+    return 'txn_' + Math.random().toString(36).substr(2, 9) + Date.now();
+  }
 
   PaymentComplete(res: any) {
     const { response, closeModal } = res;
