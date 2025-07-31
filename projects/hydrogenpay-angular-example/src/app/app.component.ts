@@ -14,7 +14,7 @@ export class AppComponent {
     email: 'inspiron.amos@gmail.com',
     customerName: 'test test',
     amount: 5,
-    apiKey: "PK_LIVE_0b2cabb4fb3a020647e50b7f3c437767", //"PK_TEST_cca53e0b3bc7847aff94502b8a585f84",//'SK_LIVE_ad9614acf356f9c6d6b0dda5895aee33', //PK_TEST_cca53e0b3bc7847aff94502b8a585f84', // replace this with your apikey
+    apiKey:  'PK_TEST_cca53e0b3bc7847aff94502b8a585f84', // replace this with your apikey
     isRecurring: false,
     frequency: 5,
     endDate: '2026-05-09',
