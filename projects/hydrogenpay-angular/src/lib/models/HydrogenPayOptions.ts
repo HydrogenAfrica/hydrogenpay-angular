@@ -47,13 +47,13 @@ export interface HydrogenPayOptions {
   mode?: 'TEST' | 'LIVE';
   isApi?: boolean;
   meta?: string;
-    /**
+  /**
    * Transaction reference
    */
   transactionRef?: string;
-    /**
-     * Metadata to be sent to the server
-     */
+  /**
+   * Metadata to be sent to the server
+   */
   metaData?: Array<{
       fieldName: string;
       fieldDefaultValue: string;
