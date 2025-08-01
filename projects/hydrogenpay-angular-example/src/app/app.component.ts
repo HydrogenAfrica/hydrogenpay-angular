@@ -11,7 +11,7 @@ export class AppComponent {
   options = {
     currency: 'NGN',
     description: 'TEST',
-    email: 'inspiron.amos@gmail.com',
+    email: 'user@example.com',
     customerName: 'test test',
     amount: 5,
     apiKey:  'PK_TEST_cca53e0b3bc7847aff94502b8a585f84', // replace this with your apikey
