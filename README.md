@@ -89,9 +89,9 @@ export class AppComponent {
     endDate: "2025-11-01", // OPTIONAL but (REQUIRED if isRecurring === true)
     meta: "test", // OPTIONAL
     transactionRef: `TRX_${Math.random().toString(36).substr(2, 10).toUpperCase()}`,
-		metaData: [
-			// 	{ fieldName: "uniqueId", fieldDefaultValue: "DevStore14", fieldKey: "uniqueId", fieldType: 1 },
-			],
+    metaData: [
+      // 	{ fieldName: "uniqueId", fieldDefaultValue: "DevStore14", fieldKey: "uniqueId", fieldType: 1 },
+      ],
   };
 
   PaymentComplete(res: any) {
