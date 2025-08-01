@@ -19,7 +19,7 @@ export class AppComponent {
     frequency: 5,
     endDate: '2026-05-09',
     transactionRef: this.generateTransactionRef(),
-    metaData:[
+    metaData: [
       // { fieldName: "uniqueId", fieldDefaultValue: "DevStore14", fieldKey: "uniqueId", fieldType: 1 },
     ]
   };
