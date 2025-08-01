@@ -25,7 +25,7 @@ export class AppComponent {
   };
 
   generateTransactionRef(): string {
-    return 'txn_' + Math.random().toString(36).substr(2, 9) + Date.now();
+    return 'txn_' + Math.random().toString(36).substring(2, 11) + Date.now();
   }
 
   PaymentComplete(res: any) {
