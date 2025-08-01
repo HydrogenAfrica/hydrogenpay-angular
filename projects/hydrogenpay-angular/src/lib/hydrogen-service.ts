@@ -28,7 +28,7 @@ export class HydrogenService {
       script.addEventListener('load', onLoadFunc);
       script.setAttribute(
         'src',
-        'https://hydrogenshared.blob.core.windows.net/paymentgateway/paymentGatewayIntegration_v1PROD.js'
+        'https://js.hydrogenpay.com/inline.js'
       );
     });
   }
@@ -45,6 +45,8 @@ export class HydrogenService {
       frequency: obj.frequency,
       endDate: obj.endDate,
       meta: obj.meta,
+      transactionRef: obj.transactionRef,
+      metaData: obj.metaData,
     };
   }
   checkInput(obj: Partial<HydrogenPayOptions>): string {

@@ -1,5 +1,5 @@
 <p align="center">
-<img width="400" valign="top" src="https://hydrogenpay.com/wp-content/uploads/2023/05/logo.png" data-canonical-src="https://hydrogenpay.com/wp-content/uploads/2023/05/logo.png" style="max-width:100%; ">
+<img width="400" valign="top" src="https://hydrogenshared.blob.core.windows.net/shared/hydrogen-logo.png" data-canonical-src="https://hydrogenshared.blob.core.windows.net/shared/hydrogen-logo.png" style="max-width:100%; ">
 </p>
 
 # <img width="35" valign="bottom" src="https://angular.io/assets/images/logos/angular/angular.svg"> Hydrogen Angular SDK
@@ -88,6 +88,10 @@ export class AppComponent {
     frequency: 1, // OPTIONAL
     endDate: "2025-11-01", // OPTIONAL but (REQUIRED if isRecurring === true)
     meta: "test", // OPTIONAL
+    transactionRef: `TRX_${Math.random().toString(36).substr(2, 10).toUpperCase()}`,
+			metaData: {[
+			// 	{ fieldName: "uniqueId", fieldDefaultValue: "DevStore14", fieldKey: "uniqueId", fieldType: 1 },
+			]}
   };
 
   PaymentComplete(res: any) {
@@ -135,3 +139,5 @@ export class AppComponent {
 | frequency    | `String`   | Optional | Recurring Payment frequency                                                 |
 | mode         | `String`   | Required | Payment Mode e.g LIVE, TEST (default: TEST)                                 |
 | endDate      | `String`   | Optional | Recurring Payment End Date. OPTIONAL but (REQUIRED when isRecurring = true) |
+| transactionRef      | `String`   | Optional | Custom Transaction reference |
+| metaData      | `Array`   | Optional | Transaction meta data |

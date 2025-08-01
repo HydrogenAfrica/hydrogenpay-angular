@@ -11,14 +11,22 @@ export class AppComponent {
   options = {
     currency: 'NGN',
     description: 'TEST',
-    email: 'test@emaildomain.com',
+    email: 'user@example.com',
     customerName: 'test test',
-    amount: 500,
-    apiKey: 'PK_TEST_cca53e0b3bc7847aff94502b8a585f84', // replace this with your apikey
+    amount: 5,
+    apiKey:  'PK_TEST_cca53e0b3bc7847aff94502b8a585f84', // replace this with your apikey
     isRecurring: false,
-    frequency: 1,
-    endDate: '2025-11-01',
+    frequency: 5,
+    endDate: '2026-05-09',
+    transactionRef: this.generateTransactionRef(),
+    metaData: [
+      // { fieldName: "uniqueId", fieldDefaultValue: "DevStore14", fieldKey: "uniqueId", fieldType: 1 },
+    ]
   };
+
+  generateTransactionRef(): string {
+    return 'txn_' + Math.random().toString(36).substring(2, 11) + Date.now();
+  }
 
   PaymentComplete(res: any) {
     const { response, closeModal } = res;
